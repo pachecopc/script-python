@@ -61,7 +61,7 @@ def imprimir_extrato(saldo, /, *, extrato):
 def criar_usuario(usuarios):
 
     cpf = input('Informe o CPF (somente numeros): ')
-    usuario = filtrar_usuarios(cpf, usuarios)
+    usuario = filtrar_usuario(cpf, usuarios)
 
     if usuario:
         print('Ja existe usuario com esse CPF: ')
@@ -72,10 +72,10 @@ def criar_usuario(usuarios):
     endereco = input('Informe o endereço (logradouro, N - bairro - cidade/ sigla estado)')
 
     usuarios.append({'nome': nome, 'data_nascimento': data_nascimento, 'cpf': cpf, 'endereco': endereco})
-
+    print("=====================================================================")
     print('Usuario registrado com sucesso !')
 
-def filtrar_usuarios(cpf, usuarios):
+def filtrar_usuario(cpf, usuarios):
 
     usuarios_filtrados = [usuario for usuario in usuarios if usuario['cpf'] == cpf]
     return usuarios_filtrados[0] if usuarios_filtrados else None
@@ -83,9 +83,9 @@ def filtrar_usuarios(cpf, usuarios):
 def criar_conta(agencia, numero_conta, usuarios):
 
     cpf = input('informe o CPF do usuario: ')
-    usuario = filtrar_usuarios(cpf, usuarios)
-
+    usuario = filtrar_usuario(cpf, usuarios)
     if usuario:
+        
         print('\n Conta criada com sucesso!')
         return {'agencia': agencia, 'numero_conta': numero_conta, 'usuario': usuario}
 
@@ -98,7 +98,7 @@ def listar_contas(contas):
     for conta in contas:
         linha = f"""\
             Agencia:\t{conta['agencia']}
-            C/C:\t{conta['numero_conta']}
+            C/C:\t\t{conta['numero_conta']}
             Tiitular:\t{conta['usuario']['nome']}
         """
         print('=' * 100)
@@ -147,7 +147,7 @@ def main():
             conta = criar_conta(AGENCIA, numero_conta, usuarios)
 
             if conta:
-                conta.append(conta)
+                contas.append(conta)
 
         elif opcao == 'lc':
             listar_contas(contas)
