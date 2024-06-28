@@ -1,3 +1,9 @@
+'''Exercício Python 084: Faça um programa que leia nome e peso de várias pessoas, guardando tudo em uma lista. No final, mostre:
+A) Quantas pessoas foram cadastradas.
+B) Uma listagem com as pessoas mais pesadas.
+C) Uma listagem com as pessoas mais leves.
+'''
+
 temp = []
 princ = []
 mai = men = 0
@@ -23,7 +29,7 @@ for p in princ:
     if p[1] == mai:
         print(f'[{p[0]}]', end="")
 print()
-print(f'O maior peso foi de {men}Kg. Peso de. ', end="")
+print(f'O menor peso foi de {men}Kg. Peso de. ', end="")
 for p in princ:
     if p[1] == men:
         print(f'[{p[0]}]', end="")    
