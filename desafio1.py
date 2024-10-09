@@ -1,6 +1,5 @@
-from datetime import date
-ano1 = 1966
-ano = date.today().year
+consumo = float(input('qual seu consumo'))
+def recomendar_plano ( )
+ 
 
-subtracao = ano - ano1
-print(subtracao)
+print(recomendar_plano (consumo))
