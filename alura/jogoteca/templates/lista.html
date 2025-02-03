@@ -1,6 +1,5 @@
 {% extends "template.html" %}
 {% block conteudo %}
-
         <table class="table table-striped table-responsivo table-bordered">
             <thead class="thead-default">
                 <tr>
@@ -8,7 +7,9 @@
                     <th>Categoria</th>
                     <th>Console</th>
                 </tr>
+
             </thead>
+
             <tbody>
                 {% for jogo in jogos %}
                 <tr>
@@ -16,7 +17,9 @@
                     <td>{{ jogo.categoria }}</td>
                     <td>{{ jogo.console }}</td>
                 </tr>
-                {% endfor %}          
+                {% endfor %} 
+                
+                
             </tbody>
         </table>
 {% endblock %}        
