@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session, flash, url_for
+from flask_sqlalchemy import SQLAlchemy 
 
 class Jogo:
      def __init__(self, nome, categoria, console):
