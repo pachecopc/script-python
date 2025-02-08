@@ -36,7 +36,7 @@ TABLES['Jogos'] = ('''
 TABLES['Usuarios'] = ('''
       CREATE TABLE `usuarios` (
       `nome` varchar(20) NOT NULL,
-      `nickname` varchar(8) NOT NULL,
+      `nickname` varchar(7) NOT NULL,
       `senha` varchar(100) NOT NULL,
       PRIMARY KEY (`nickname`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
@@ -57,7 +57,7 @@ for tabela_nome in TABLES:
 # inserindo usuarios
 usuario_sql = 'INSERT INTO usuarios (nome, nickname, senha) VALUES (%s, %s, %s)'
 usuarios = [
-      ("Bruno Divino", "BD", "alohomora"),
+      ("Paulo Pacheco", "Vento", "pacheco1"),
       ("Camila Ferreira", "Mila", "paozinho"),
       ("Guilherme Louro", "Cake", "python_eh_vida")
 ]
