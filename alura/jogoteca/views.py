@@ -26,11 +26,10 @@ def criar():
          flash('Jogo Existente!')
          return redirect(url_for('index'))
      novo_jogo = Jogos(nome=nome, categoria=categoria, console=console)
-
      db.session.add(novo_jogo)
      db.session.commit()
 
-     arquivo = request.files['arquivo']
+     arquivo = request.files ['arquivo']
      arquivo.save(f'uploads/{arquivo.filename}')
      
 
